@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dashboard</title>
+	<style>
+		body {
+			background-color: black;
+			color: green;
+		}
+	</style>
+</head>
+<body>
+	<h1>Dashboard</h1>
+	<form>
+		<label for="search_ip">Search IP address:</label>
+		<input type="text" id="search_ip" name="search_ip">
+		<input type="submit" value="Search">
+	</form>
+	<h2>Cookies</h2>
+	{% for cookie_name, cookie_value in cookies.items() %}
+		<p>{{ cookie_name }}: {{ cookie_value }}</p>
+		<p>IP address: {{ request.remote_addr }}</p>
+	{% endfor %}
+</body>
+</html>
